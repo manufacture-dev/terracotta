@@ -1,0 +1,12 @@
+name = "Terracotta"
+license = "MIT"
+licenselink = "https://github.com/manufacture-dev/terracotta/blob/master/LICENSE"
+description = "Terracotta theme for Manufacture website"
+homepage = "https://github.com/manufacture-dev/terracotta"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Manufacture"
+  homepage = "https://manufacture.dev/"
