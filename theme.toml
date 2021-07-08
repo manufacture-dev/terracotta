@@ -5,8 +5,13 @@ description = "Terracotta theme for Manufacture website"
 homepage = "https://github.com/manufacture-dev/terracotta"
 tags = []
 features = []
-min_version = "0.41.0"
+min_version = "0.62.2"
 
 [author]
   name = "Manufacture"
   homepage = "https://manufacture.dev/"
+
+[original]
+  name = "Vex"
+  homepage = "https://gethugothemes.com/products/vex-hugo-theme/"
+  repo = "https://github.com/themefisher/vex-hugo"
