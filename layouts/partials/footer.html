@@ -7,20 +7,17 @@
           <ul class="list-inline footer-menu">
             {{ range site.Menus.footer }}
             <li class="list-inline-item">
-              <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+              <a href="{{ .URL | absLangURL }}">{{i18n .Name }}</a>
             </li>
             {{ end }}
           </ul>
-          <p class="copyright-text">{{ site.Params.copyright | markdownify }}</p>
+          <p class="copyright-text">&copy; {{ now.Format "2006" }} {{ site.Params.copyright | markdownify }}</p>
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-
-<!-- Snipcart public key -->
-{{with site.Params.snipcart_api}}<div hidden id="snipcart" data-api-key="{{.}}"></div>{{end}}
 
 <!-- JS Plugins -->
 {{ range site.Params.plugins.js}}
