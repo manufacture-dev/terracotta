@@ -9,18 +9,24 @@
         <div class="heading">
           <h2>{{ .title | markdownify }}</h2>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
         <div class="text-center">
           <p>{{ .description | markdownify }}</p>
           <p>{{ .legend | markdownify }}</p>
         </div>
       </div>
-        <div class="col-12">
-          <div class="col-md-4"></div>
-          <div class="col-md-4 text-center align-self-center mb-4 mb-md-0">
-            <img class="img-fluid" src="{{ .image | absURL }}" alt="">
-          </div>
-          <div class="col-md-4"></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="mb-4 text-center align-self-center mb-4 mb-md-0">
+          <img class="img-fluid" src="{{ .image | absURL }}" alt="">
         </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-12">
         <div class="text-left">
           <p>{{ .observation | markdownify }}</p>
@@ -30,8 +36,8 @@
         </div>
       </div>
       <div class="col-12">
-        <p class="mb-4 text-center">{{ .conclusion | markdownify }}</p>
-        <p class="mb-4 text-center">{{ .solution | markdownify }}</p>
+        <p class="font-weight-bold mb-4 text-center">{{ .conclusion | markdownify }}</p>
+        <p class="font-weight-bold mb-4 text-center">{{ .solution | markdownify }}</p>
       </div>
       <div class="col-12">
         {{ with .study }}
@@ -40,8 +46,10 @@
         {{ end }}
       </div>
       <div class="col-12 text-center">
+        {{ if .button.enable }}
         {{ with .button }}
         <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
+        {{ end }}
         {{ end }}
       </div>
     </div>

@@ -29,7 +29,9 @@
           {{ end }}
         </div>
         {{ end }}
-        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+        <div class="h-50">
+          <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+        </div>
         {{ with .bottom }}
         <div class="mb-40 text-center text-md-left">
           <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
@@ -47,6 +49,13 @@
           <p>- {{ .item | markdownify }}</p>
           {{ end }}
         </div>
+        {{ end }}
+      </div>
+      <div class="col-12 text-center">
+        {{ if .button.enable }}
+        {{ with .button }}
+        <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
+        {{ end }}
         {{ end }}
       </div>
     </div>
