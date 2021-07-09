@@ -1,0 +1,50 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.homepage.results.enable }}
+{{- with $data.homepage.results }}
+<section class="section" id="results">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ with .team }}
+        <div class="mb-40 text-center text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          {{ range .impacts }}
+          <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
+          <p>{{ .item | markdownify }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <div class="col-md-4">
+        {{ with .product }}
+        <div class="mb-40 text-center text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          {{ range .impacts }}
+          <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
+          <p>{{ .item | markdownify }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <div class="col-md-4">
+        {{ with .organisation }}
+        <div class="mb-40 text-center text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          {{ range .impacts }}
+          <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
+          <p>{{ .item | markdownify }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div><!-- .container close -->
+</section>
+{{- end }}
+{{- end }}

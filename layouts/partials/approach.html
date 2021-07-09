@@ -1,0 +1,48 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.homepage.approach.enable }}
+{{- with $data.homepage.approach }}
+<section class="section" id="approach">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ with .master }}
+        <div class="mb-40 text-center text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          {{ range .results }}
+          <p>- {{ .item | markdownify }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <div class="col-md-4 text-center align-self-center mb-4 mb-md-0">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+      <div class="col-md-4">
+        {{ with .deliver }}
+        <div class="mb-40 text-center text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          {{ range .outputs }}
+          <p>- {{ .item | markdownify }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ with .impact }}
+        <div class="mb-40 text-center text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          {{ range .outcomes }}
+          <p>- {{ .item | markdownify }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div><!-- .container close -->
+</section>
+{{- end }}
+{{- end }}
