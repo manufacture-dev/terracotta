@@ -2,7 +2,7 @@
 
 {{- if $data.homepage.target.enable }}
 {{- with $data.homepage.target }}
-<section class="section" id="target">
+<section class="section bg-white" id="target">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -12,38 +12,27 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
-        <div class="text-center">
-          <p>{{ .description | markdownify }}</p>
-          <p>{{ .legend | markdownify }}</p>
+      <div class="col-md-6">
+        <div class="text-left">
+          <p class="font-weight-bold">{{ .description | markdownify }} {{ .legend | markdownify }}</p>
         </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-6">
         <div class="mb-4 text-center align-self-center mb-4 mb-md-0">
           <img class="img-fluid" src="{{ .image | absURL }}" alt="">
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+      <div class="col-md-6">
         <div class="text-left">
           <p>{{ .observation | markdownify }}</p>
           {{ range .facts }}
           <p>- {{ .item | markdownify }}</p>
           {{ end }}
+          <p class="font-weight-bold mb-4">{{ .conclusion | markdownify }}</p>
+          <p class="font-weight-bold mb-4">{{ .solution | markdownify }}</p>
+          {{ with .study }}
+          <p class="mb-4 text-center font-italic quote">{{ .content | markdownify }}</p>
+          <p class="mb-4 text-center font-italic quote">{{ .source | markdownify }}</p>
+          {{ end }}
         </div>
-      </div>
-      <div class="col-12">
-        <p class="font-weight-bold mb-4 text-center">{{ .conclusion | markdownify }}</p>
-        <p class="font-weight-bold mb-4 text-center">{{ .solution | markdownify }}</p>
-      </div>
-      <div class="col-12">
-        {{ with .study }}
-        <p class="mb-4 text-center font-italic">{{ .content | markdownify }}</p>
-        <p class="mb-4 text-center font-italic">{{ .source | markdownify }}</p>
-        {{ end }}
       </div>
       <div class="col-12 text-center">
         {{ if .button.enable }}

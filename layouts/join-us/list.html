@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center mb-5">
+        <h1 class="font-weight-bold">{{ .Title }}</h1>
+      </div>
+      <div class="col-lg-10 mb-5">
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+      {{ if .Params.button.enable }}
+      {{ with .Params.button }}
+      <div class="col-lg-10 text-center mb-5">
+        <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
+      </div>
+      {{ end }}
+      {{ end }}
+      <div class="col-lg-10 text-left mb-5">
+        <h2 class="mb-2">{{ .Params.principles.label | markdownify }}</h2>
+        {{ range .Params.principles.items }}
+        <p>- {{ . | markdownify }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

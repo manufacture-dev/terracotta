@@ -1,11 +1,12 @@
 @import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&display=swap');
 
 // Variables
 $primary-font: 'Josefin Sans',
 sans-serif;
 $secondary-font: 'Droid Serif',
 serif;
-$primary-color: #e71538;
+$primary-color: #ED6763;
 $icon-font: 'themefisher-font' !important;
 
 /*--
@@ -34,7 +35,9 @@ body {
   justify-content: center
 }
 
-h1,
+h1 {
+  color: #ED6763;
+}
 h2,
 h3,
 h4,
@@ -95,8 +98,47 @@ a {
   background-image: url(../images/call-to-action.jpg);
 }
 
+.bg-gray {
+  background-color: #edf1f5!important;
+
+  h1 {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  select {
+    background-color: #edf1f5;
+  }
+}
+
+.bg-gray {
+  background-color: #edf1f5!important;
+
+  h1 {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  select {
+    background-color: #edf1f5;
+  }
+}
+
 .bg-orange {
   background: $primary-color;
+}
+
+.bg-terracotta {
+  background: #ED6763;
+
+  .heading {
+    text-align: left;
+    padding-bottom: 0px;
+
+    h2 {
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff!important;
+      padding-bottom: 0px;
+    }
+  }
 }
 
 .bg-opacity {
@@ -125,6 +167,10 @@ a:active,
 a:focus,
 a:active {
   text-decoration: none;
+}
+
+p.quote {
+  font-size: 14px;
 }
 
 .section {
@@ -165,7 +211,7 @@ a:active {
   padding-bottom: 70px;
 
   h2 {
-    color: #3c3c3c;
+    color: #ED6763;
     padding-bottom: 15px;
     font-weight: 700;
     font-size: 40px;
@@ -199,7 +245,7 @@ a:active {
   padding: 15px 40px;
   display: inline-block;
   background-color: $primary-color;
-  box-shadow: 0 15px 40px rgba(249, 68, 152, 0.5);
+  box-shadow: 0 15px 40px rgba(237, 103, 99, 0.5);
   background-image: linear-gradient(bottom, rgba(255, 239, 206, 0) 0%, rgba(255, 239, 206, 0.25) 100%);
 
   &:hover,
@@ -370,6 +416,8 @@ a:active {
     .author-details {
       img {
         width: 175px;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
       }
 
       h4 {
@@ -417,14 +465,14 @@ a:active {
   a {
     font-size: 14;
     font-weight: 700;
-    color: #444;
+    color: #fff;
     padding: 10px;
   }
 }
 
 footer {
   text-align: center;
-  background: #f4f4f4;
+  background: #303B3E;
   padding: 50px 0px;
 
   .footer-logo {
@@ -435,7 +483,7 @@ footer {
   p.copyright-text {
     font-weight: 300;
     font-size: 12px;
-    color: #888;
+    color: #fff;
     letter-spacing: 3px;
     margin-top: 15px;
 

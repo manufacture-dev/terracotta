@@ -2,14 +2,20 @@
 
 {{- if $data.homepage.steps.enable }}
 {{- with $data.homepage.steps }}
-<section class="section" id="steps">
+<section class="section bg-terracotta" id="steps">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12">
+      <div class="col-8">
         <div class="heading">
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
+    </div>
+  </div><!-- .container close -->
+</section>
+<section class="section bg-white" id="steps">
+  <div class="container">
+    <div class="row align-items-center">
       <div class="col-md-4">
         {{ with .left_side }}
         <div class="mb-40 text-center text-md-left">

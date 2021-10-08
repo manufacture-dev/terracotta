@@ -3,30 +3,32 @@
 <section class="section">
   <div class="container">
     <div class="row justify-content-center">
-      {{ with .Params.office }}
-      <div class="col-lg-8 mb-5">
+      {{ with .Params }}
+      <div class="col-lg-12 mb-5">
         <h2 class="font-weight-bold mb-4">{{ .title | markdownify }}</h2>
         <p>{{ .content | markdownify }}</p>
-        <ul class="list-unstyled contact-list">
-          {{with .mobile}} <li class="mb-3"><a href="tel:{{ . }}"><i class="tf-ion-ios-telephone mr-2"></i>
-              {{ . }}</a></li>{{ end }}
-          {{with .email}} <li class="mb-3"><a href="mailto:{{ . }}"><i class="tf-ion-email mr-2"></i>{{ . }}</a></li>
-          {{end }}
-          {{with .location }} <li class="mb-3"><i class="tf-ion-ios-location mr-2"></i>{{ . }}
-          </li>{{ end }}
-        </ul>
       </div>
-      {{ end }}
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <h2 class="font-weight-bold mb-4">{{ .Title | markdownify }}</h2>
         <form action="{{ site.Params.contact_form_action }}" method="POST" class="row">
           <div class="col-lg-6 mb-3">
-            <input type="text" class="form-control mb-2" id="name" name="name" placeholder="Your Name">
+            <input type="text" class="form-control mb-2" id="lastname" name="lastname" placeholder="{{ i18n "lastname" }}">
           </div>
           <div class="col-lg-6 mb-3">
-            <input type="email" class="form-control mb-2" id="email" name="email" placeholder="Your Email">
+            <input type="text" class="form-control mb-2" id="firstname" name="firstname" placeholder="{{ i18n "firstname" }}">
+          </div>
+          <div class="col-lg-6 mb-3">
+            <input type="text" class="form-control mb-2" id="business" name="business" placeholder="{{ i18n "business" }}">
+          </div>
+          <div class="col-lg-6 mb-3">
+            <input type="tel" class="form-control mb-2" id="phone-number" name="phone-number" placeholder="{{ i18n "phone-number" }}">
+          </div>
+          <div class="col-12 mb-3">
+            <input type="email" class="form-control mb-2" id="email" name="email" placeholder="{{ i18n "email" }}">
+          </div>
+          <div class="col-12 mb-3">
+            <input type="text" class="form-control mb-2" id="reason" name="reason" placeholder="{{ .reason | markdownify }}">
           </div>
           <div class="col-12 mb-3">
             <textarea name="message" id="message" class="form-control mb-2" placeholder="Your Message"></textarea>
@@ -36,6 +38,10 @@
           </div>
         </form>
       </div>
+      <div class="col-lg-4">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>
