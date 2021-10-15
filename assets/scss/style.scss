@@ -201,7 +201,7 @@ p.quote {
 }
 
 .font-title {
-  font-size: 70px;
+  font-size: 60px;
   line-height: 1.2;
 
   @include mobile {
@@ -271,7 +271,6 @@ p.quote {
 }
 
 .cta {
-  text-align: center;
   padding-top: 70px;
 }
 
@@ -291,7 +290,7 @@ p.quote {
 .btn-main {
   color: #fff;
   border-radius: 30px;
-  font-size: 25px;
+  font-size: 18px;
   padding: 15px 40px;
   display: inline-block;
   background-color: $primary-color;
