@@ -10,45 +10,30 @@
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
+      {{ range .dimensions }}
       <div class="col-md-4">
-        {{ with .team }}
         <div class="mb-40 text-center text-md-left">
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
-          {{ range .impacts }}
-          <p>
-            <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
-            {{ .item | markdownify }}
-          </p>
-          {{ end }}
+          <div class="row">
+            <div class="col-md-2">
+              <img class="img-fluid" width="35" src="images/check.svg" alt="">
+            </div>
+            <div class="col-md-10">
+              <h2 class="font-weight-bold mb-2">{{ .title | markdownify }}</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 offset-2">
+              {{ range .impacts }}
+              <p>
+                <i class="d-inlin-block h2 mb-10"></i>
+                {{ .item | markdownify }}
+              </p>
+              {{ end }}
+            </div>
+          </div>
         </div>
-        {{ end }}
       </div>
-      <div class="col-md-4">
-        {{ with .product }}
-        <div class="mb-40 text-center text-md-left">
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
-          {{ range .impacts }}
-          <p>
-            <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
-            {{ .item | markdownify }}
-          </p>
-          {{ end }}
-        </div>
-        {{ end }}
-      </div>
-      <div class="col-md-4">
-        {{ with .organisation }}
-        <div class="mb-40 text-center text-md-left">
-          <h4 class="font-weight-bold mb-2 ">{{ .title | markdownify }}</h4>
-          {{ range .impacts }}
-          <p>
-            <i class="d-inlin-block h2 mb-10"></i>
-            {{ .item | markdownify }}
-          </p>
-          {{ end }}
-        </div>
-        {{ end }}
-      </div>
+      {{ end }}
     </div>
   </div><!-- .container close -->
 </section>
