@@ -2,7 +2,7 @@
 
 {{- if $data.homepage.approach.enable }}
 {{- with $data.homepage.approach }}
-<section class="section bg-grey-2 bg" id="approach" style="background-image: url(images/bg-approach.png); background-position: right bottom">
+<section class="section bg-grey-2" id="approach">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -24,6 +24,10 @@
       </div>
       {{ end }}
     </div>
+  </div>
+</section>
+<section class="section" style="background: linear-gradient(90deg, #eae7df 50%, #e3e1d9 50%);">
+  <div class="container">
     <div class="row align-items-center">
       {{ with .deliver }}
       <div class="col-md-4">
