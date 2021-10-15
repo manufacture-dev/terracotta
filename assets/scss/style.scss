@@ -6,7 +6,7 @@ $primary-font: 'Josefin Sans',
 sans-serif;
 $secondary-font: 'Droid Serif',
 serif;
-$primary-color: #ED6763;
+$primary-color: #ea544d;
 $icon-font: 'themefisher-font' !important;
 
 /*--
@@ -17,6 +17,7 @@ body {
   font-weight: 300;
   line-height: 25px;
   color: #3b4045;
+  background-color: #f6f5f1;
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
 }
@@ -36,7 +37,8 @@ body {
 }
 
 h1 {
-  color: #ED6763;
+  font-family: 'JetBrains Mono', monospace;
+  color: #ea544d;
 }
 h2,
 h3,
@@ -73,7 +75,7 @@ h4,
 }
 
 p {
-  font-size: 18px;
+  font-size: 25px;
   line-height: 25px;
 }
 
@@ -98,27 +100,27 @@ a {
   background-image: url(../images/call-to-action.jpg);
 }
 
-.bg-gray {
-  background-color: #edf1f5!important;
+.bg-header {
+  background-color: #faf9f5!important;
 
   h1 {
     font-family: 'JetBrains Mono', monospace;
   }
 
   select {
-    background-color: #edf1f5;
+    background-color: #faf9f5;
   }
 }
 
-.bg-gray {
-  background-color: #edf1f5!important;
+.bg-header {
+  background-color: #faf9f5!important;
 
   h1 {
     font-family: 'JetBrains Mono', monospace;
   }
 
   select {
-    background-color: #edf1f5;
+    background-color: #faf9f5;
   }
 }
 
@@ -126,8 +128,24 @@ a {
   background: $primary-color;
 }
 
+.bg-grey-1 {
+  background: #f6f5f1;
+}
+
+.bg-grey-2 {
+  background: #f2efeb;
+}
+
+.bg-grey-3 {
+  background: #eae7df;
+}
+
+.bg-grey-4 {
+  background: #e3e1d9;
+}
+
 .bg-terracotta {
-  background: #ED6763;
+  background: #ea544d;
 
   .heading {
     text-align: left;
@@ -177,8 +195,13 @@ p.quote {
   padding: 100px 0;
 }
 
-.font-size-60 {
-  font-size: 60px;
+.bg {
+  background-repeat: no-repeat;
+  background-size: 1920px;
+}
+
+.font-title {
+  font-size: 70px;
   line-height: 1.2;
 
   @include mobile {
@@ -206,16 +229,17 @@ p.quote {
 }
 
 .heading {
-  text-align: center;
+  text-align: left;
   color: #777777;
   padding-bottom: 70px;
 
   h2 {
-    color: #ED6763;
+    font-family: 'JetBrains Mono', monospace;
+    color: #ea544d;
     padding-bottom: 15px;
     font-weight: 700;
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 45px;
+    line-height: 65px;
   }
 
   p {
@@ -223,6 +247,32 @@ p.quote {
     line-height: 24px;
     font-weight: 300;
   }
+}
+
+.heading-black {
+  text-align: center;
+  color: #777777;
+  padding-bottom: 70px;
+
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    color: #3b4045;
+    padding-bottom: 15px;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 65px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 300;
+  }
+}
+
+.cta {
+  text-align: center;
+  padding-top: 70px;
 }
 
 .subheading {
@@ -241,7 +291,7 @@ p.quote {
 .btn-main {
   color: #fff;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 25px;
   padding: 15px 40px;
   display: inline-block;
   background-color: $primary-color;
@@ -471,8 +521,11 @@ p.quote {
 }
 
 footer {
+  background-repeat: no-repeat;
+  background-size: 1920px;
+
   text-align: center;
-  background: #303B3E;
+  background-color: #2d3b3e;
   padding: 50px 0px;
 
   .footer-logo {
@@ -523,7 +576,7 @@ s.price {
   li,
   a {
     color: #282828;
-    font-size: 18px;
+    font-size: 25px;
   }
 }
 

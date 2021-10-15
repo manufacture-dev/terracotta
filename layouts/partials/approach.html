@@ -2,7 +2,7 @@
 
 {{- if $data.homepage.approach.enable }}
 {{- with $data.homepage.approach }}
-<section class="section" id="approach">
+<section class="section bg-grey-2 bg" id="approach" style="background-image: url(images/bg-approach.png); background-position: right bottom">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -11,40 +11,42 @@
         </div>
       </div>
     </div>
-    <div class="row align-items-center">
-      <div class="col-md-4">
-        {{ with .master }}
-        <div class="mb-40 text-center text-md-left">
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
-          {{ range .results }}
-          <p>- {{ .item | markdownify }}</p>
-          {{ end }}
-        </div>
-        {{ end }}
-      </div>
-      <div class="col-md-4 text-center align-self-center mb-4 mb-md-0">
+    <div class="row align-items-end">
+      {{ with .master }}
+      <div class="col-md-4 offset-3">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
-      <div class="col-md-4">
-        {{ with .deliver }}
-        <div class="mb-40 text-center text-md-left">
-          <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
+      <div class="col-md-2">
+        <div class="mb-40 text-md-left">
           <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
-          {{ range .outputs }}
-          <p>- {{ .item | markdownify }}</p>
-          {{ end }}
+          <p>{{ .description | markdownify }}</p>
         </div>
-        {{ end }}
-        {{ with .impact }}
-        <div class="mb-40 text-center text-md-left">
-          <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
-          {{ range .outcomes }}
-          <p>- {{ .item | markdownify }}</p>
-          {{ end }}
-        </div>
-        {{ end }}
       </div>
+      {{ end }}
+    </div>
+    <div class="row align-items-center">
+      {{ with .deliver }}
+      <div class="col-md-4">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <div class="mb-40 text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
+      {{ with .impact }}
+      <div class="col-md-4">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <div class="mb-40 text-md-left">
+          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
     </div>
   </div><!-- .container close -->
 </section>

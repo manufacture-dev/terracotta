@@ -2,10 +2,10 @@
 
 {{- if $data.homepage.results.enable }}
 {{- with $data.homepage.results }}
-<section class="section" id="results">
+<section class="section bg-grey-2 bg" id="results" style="background-image: url(images/bg-results.png); background-position: right bottom">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-md-10">
         <div class="heading">
           <h2>{{ .title | markdownify }}</h2>
         </div>
@@ -39,10 +39,10 @@
       <div class="col-md-4">
         {{ with .organisation }}
         <div class="mb-40 text-center text-md-left">
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          <h4 class="font-weight-bold mb-2 ">{{ .title | markdownify }}</h4>
           {{ range .impacts }}
           <p>
-            <i class="d-inlin-block h2 mb-10 tf-ion-android-checkbox-outline"></i>
+            <i class="d-inlin-block h2 mb-10"></i>
             {{ .item | markdownify }}
           </p>
           {{ end }}

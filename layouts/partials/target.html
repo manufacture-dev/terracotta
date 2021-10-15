@@ -2,45 +2,29 @@
 
 {{- if $data.homepage.target.enable }}
 {{- with $data.homepage.target }}
-<section class="section bg-white" id="target">
+<section class="section bg-grey-2 bg" id="target" style="background-image: url(images/bg-target.png); background-position: left top">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-md-10">
         <div class="heading">
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="text-left">
-          <p class="font-weight-bold">{{ .description | markdownify }} {{ .legend | markdownify }}</p>
-        </div>
-        <div class="mb-4 text-center align-self-center mb-4 mb-md-0">
-          <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+          <p>{{ .description | markdownify }} {{ .legend | markdownify }}</p>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="text-left">
-          <p>{{ .observation | markdownify }}</p>
-          {{ range .facts }}
-          <p>- {{ .item | markdownify }}</p>
-          {{ end }}
-          <p class="font-weight-bold mb-4">{{ .conclusion | markdownify }}</p>
-          <p class="font-weight-bold mb-4">{{ .solution | markdownify }}</p>
-          {{ with .study }}
-          <p class="mb-4 text-center font-italic quote">{{ .content | markdownify }}</p>
-          <p class="mb-4 text-center font-italic quote">{{ .source | markdownify }}</p>
-          {{ end }}
-        </div>
+    </div>
+    <div class="row">
+      {{ range .facts }}
+      <div class="col-md-3 align-self-end">
+        <img class="img-fluid m-5" src="{{ .image | absURL }}" alt="">
+        <p>{{ .name | markdownify }}</p>
       </div>
-      <div class="col-12 text-center">
-        {{ if .button.enable }}
-        {{ with .button }}
-        <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
-        {{ end }}
-        {{ end }}
-      </div>
+      {{ end }}
     </div>
   </div><!-- .container close -->
 </section>
