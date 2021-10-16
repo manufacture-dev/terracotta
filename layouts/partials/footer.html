@@ -1,18 +1,55 @@
-<footer style="background-image: url(images/bg-footer.png); background-position: left top">
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<footer class="bg" style="background-image: url(images/bg-footer-left.png), url(images/bg-footer-right.png); background-position: left top, right top">
   <div class="container text-center">
-    <div class="row">
-      <div class="col-md-12">
+    <div class="row" style="padding-bottom: 150px">
+      <div class="col-md-4 text-md-left">
+        {{- if $data.footer.contact.enable }}
+        {{- with $data.footer.contact }}
+        <div class="block">
+          <p class="font-size-30">{{ .description | markdownify }}</p>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <div class="cta">
+            <a href="{{.link|absLangURL}}" class="btn btn-main">{{ .label }}</a>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+        {{- end }}
+        {{- end }}
+      </div>
+      <div class="col-md-5">
         <div class="block">
           <a href="{{ site.BaseURL | relLangURL }}" class="mb-4 d-inline-block">{{ if site.Params.logo }} <img style="filter: invert(100%);" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" {{with site.Params.logo_width}}width="{{.}}"{{end}}> {{ else }} {{ .Title }} {{ end }}</a>
-          <ul class="list-inline footer-menu">
-            {{ range site.Menus.footer }}
-            <li class="list-inline-item">
-              <a href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a>
-            </li>
-            {{ end }}
-          </ul>
-          <p class="copyright-text">&copy; {{ now.Format "2006" }} {{ site.Params.copyright | markdownify }}</p>
+          <div class="row">
+            <div class="col-md-8 offset-4 text-md-left">
+              <ul class="footer-menu">
+                {{ range site.Menus.footer }}
+                <li>
+                  <a href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-md-2 offset-1 align-self-center">
+        {{- if $data.footer.social.enable }}
+        {{- with $data.footer.social }}
+        <ul class="footer-social">
+          {{ range .networks }}
+          <a href="{{ .url | absLangURL }}"><li class="{{ .icon }}"></li></a>
+          {{ end }}
+        </ul>
+        {{- end }}
+        {{- end }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="copyright-text">&copy; {{ now.Format "2006" }} {{ site.Params.copyright | markdownify }}</p>
       </div>
     </div>
   </div>
