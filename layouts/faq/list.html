@@ -1,14 +1,14 @@
 {{ define "main" }}
 
-<section class="section">
+<section class="section bg-grey-1 bg" style="background-image: url(/images/bg-promise-left.png), url(/images/bg-promise-right.png); background-position: left bottom, right top">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-10 text-center mb-5">
-        <h1 class="font-weight-bold">{{.Title}}</h1>
+      <div class="col-lg-10 text-left mb-5">
+        <h1 class="font-weight-bold">{{ .Title }}</h1>
       </div>
       <div class="col-lg-10 mb-5">
         <div class="content">
-          {{.Content}}
+          {{ .Content }}
         </div>
       </div>
       {{ if .Params.button.enable }}
