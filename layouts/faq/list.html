@@ -11,6 +11,13 @@
           {{.Content}}
         </div>
       </div>
+      {{ if .Params.button.enable }}
+      {{ with .Params.button }}
+      <div class="col-lg-10 text-center mb-5">
+        <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
+      </div>
+      {{ end }}
+      {{ end }}
     </div>
   </div>
 </section>
