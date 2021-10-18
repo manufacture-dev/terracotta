@@ -1,0 +1,36 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.offer.results.enable }}
+{{- with $data.offer.results }}
+<section class="section bg-grey-1" id="results">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="heading">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+      {{ range .notes }}
+      <div class="col-md-12 align-self-end text-left font-italic">
+        <p>{{ .label | markdownify }}</p>
+      </div>
+      {{ end }}
+      <div class="col-12 text-center">
+        {{ if .button.enable }}
+        {{ with .button }}
+        <div class="cta">
+          <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

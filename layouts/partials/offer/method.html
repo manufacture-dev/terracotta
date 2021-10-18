@@ -1,0 +1,31 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.offer.method.enable }}
+{{- with $data.offer.method }}
+<section class="section bg-grey-1" id="method">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="heading">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-1 align-self-end text-center">
+        <p>{{ .description | markdownify }}</p>
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+      {{ range .details }}
+      <div class="col-md-12 align-self-end text-left">
+        <p>{{ .element | markdownify }}</p>
+      </div>
+      {{ end }}
+      <div class="col-md-12 align-self-end text-left font-italic">
+        <p>{{ .note | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

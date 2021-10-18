@@ -1,0 +1,22 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.offer.impact.enable }}
+{{- with $data.offer.impact }}
+<section class="section bg-grey-2 bg" id="impact" style="background-image: url(/images/bg-results.png); background-position: right bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="heading">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

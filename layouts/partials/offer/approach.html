@@ -1,0 +1,84 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.offer.approach.enable }}
+{{- with $data.offer.approach }}
+<section class="section bg-grey-2 bg" id="approach" style="background-image: url(/images/bg-target.png); background-position: left top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="heading">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="text-left font-weight-bold">
+          <p>{{ .statement | markdownify }}</p>
+        </div>
+        <div class="text-left">
+          <p>{{ .details | markdownify }}</p>
+        </div>
+        <div class="text-center">
+          <p>{{ .purpose | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    {{ with .coaching }}
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="text-center">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+      {{ range .formats }}
+      <div class="col-md-6 align-self-start">
+        <div class="text-center font-weight-bold">
+          <div class="row">
+            <div class="col-md-4 offset-1 align-self-center">
+              <img class="img-fluid m-5" src="{{ .image | absURL }}" alt="">
+            </div>
+            <div class="col-md-4 align-self-center">
+              <p>{{ .name | markdownify }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-left">
+          {{ range .practices }}
+          <p>- {{ .name | markdownify }} : {{ .description | markdownify }}</p>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ with .goal }}
+      <div class="col-md-10 offset-1">
+        <div class="text-center">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+      <div class="col-md-10 offset-2 align-self-end text-left">
+        {{ $.Scratch.Set "index" 0 }}
+        {{ range .results }}
+        {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+        <p>{{ $.Scratch.Get "index" }} {{ .name | markdownify }}</p>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ range .outcomes }}
+      <div class="col-md-6 align-self-start">
+        <div class="text-center font-weight-bold">
+          <p>{{ .name | markdownify }}</p>
+        </div>
+        <div class="text-left">
+          {{ range .items }}
+          <p>{{ .name | markdownify }}</p>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{- end }}
+{{- end }}

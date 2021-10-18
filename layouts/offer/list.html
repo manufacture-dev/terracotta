@@ -1,18 +1,13 @@
 {{ define "main" }}
 
-<section class="section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-center mb-5">
-        <h1 class="font-weight-bold">{{.Title}}</h1>
-      </div>
-      <div class="col-lg-10 mb-5">
-        <div class="content">
-          {{.Content}}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  {{- partial "offer/target.html" . }}
+
+  {{- partial "offer/approach.html" . }}
+
+  {{- partial "offer/method.html" . }}
+
+  {{- partial "offer/impact.html" . }}
+
+  {{- partial "offer/results.html" . }}
 
 {{ end }}

@@ -1,0 +1,60 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{- if $data.offer.target.enable }}
+{{- with $data.offer.target }}
+<section class="section bg-grey-1 bg" style="background-image: url(/images/bg-promise-left.png), url(/images/bg-promise-right.png); background-position: left bottom, right top">
+  <div class="container">
+    {{ with .statement }}
+    <div class="row">
+      <div class="col-md-10">
+        <div class="text-left font-weight-bolder">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    {{ range .figures }}
+    <div class="row">
+      <div class="col-md-2">
+        <div class="text-right font-weight-bold">
+          <p>{{ .number | markdownify }}</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-left font-weight-bolder">
+          <p>{{ .details | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    {{ with .source }}
+    <div class="row">
+      <div class="col-md-6 offset-4">
+        <div class="text-right">
+          <a href="{{ .url | absLangURL }}" class="link-title">{{ .label | markdownify }}</a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="text-center font-weight-bolder">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {{ range .levels }}
+      <div class="col-md-3 align-self-end">
+        <img class="img-fluid m-5" src="{{ .image | absURL }}" alt="">
+        <div class="text-left">
+          <p>{{ .name | markdownify }}</p>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}
