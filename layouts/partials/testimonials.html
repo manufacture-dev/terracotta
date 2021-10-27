@@ -1,7 +1,7 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
 {{ if $data.homepage.testimonial.enable }}
-<section class="testimonials section bg-grey-1" id="testimonial">
+<section class="testimonials section bg-grey-1 bg" id="testimonial" style="background-image: url(/images/bg-testimonials-left.png), url(/images/bg-testimonials-right.png); background-position: left bottom, right top; background-size: 208px, 180px">
   <div class="container">
     {{ with $data.homepage.testimonial }}
     <div class="row justify-content-center">

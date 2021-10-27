@@ -6,7 +6,14 @@ $primary-font: 'Josefin Sans',
 sans-serif;
 $secondary-font: 'Droid Serif',
 serif;
-$primary-color: #ea544d;
+
+$primary-color: #fa464a;
+$secondary-color: #2c3b3d;
+$tertiary-color: #bcd2cf;
+$quaternary-color: #f2efe9;
+$quinary-color: #f7f5f1;
+$senary-color: #faf9f6;
+
 $icon-font: 'themefisher-font' !important;
 
 /*--
@@ -16,8 +23,8 @@ body {
   font-size: 14px;
   font-weight: 300;
   line-height: 25px;
-  color: #3b4045;
-  background-color: #f6f5f1;
+  color: $secondary-color;
+  background-color: $quinary-color;
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
 }
@@ -38,7 +45,7 @@ body {
 
 h1 {
   font-family: 'JetBrains Mono', monospace;
-  color: #ea544d;
+  color: $primary-color;
 }
 h2,
 h3,
@@ -101,26 +108,26 @@ a {
 }
 
 .bg-header {
-  background-color: #faf9f5!important;
+  background-color: $senary-color!important;
 
   h1 {
     font-family: 'JetBrains Mono', monospace;
   }
 
   select {
-    background-color: #faf9f5;
+    background-color: $senary-color;
   }
 }
 
 .bg-header {
-  background-color: #faf9f5!important;
+  background-color: $senary-color!important;
 
   h1 {
     font-family: 'JetBrains Mono', monospace;
   }
 
   select {
-    background-color: #faf9f5;
+    background-color: $senary-color;
   }
 }
 
@@ -129,23 +136,15 @@ a {
 }
 
 .bg-grey-1 {
-  background: #f6f5f1;
+  background: $quinary-color;
 }
 
 .bg-grey-2 {
-  background: #f2efeb;
-}
-
-.bg-grey-3 {
-  background: #eae7df;
-}
-
-.bg-grey-4 {
-  background: #e3e1d9;
+  background: $quaternary-color;
 }
 
 .bg-terracotta {
-  background: #ea544d;
+  background: $primary-color;
 
   .heading {
     text-align: left;
@@ -197,7 +196,6 @@ p.quote {
 
 .bg {
   background-repeat: no-repeat;
-  background-size: 1920px;
 }
 
 .font-title {
@@ -235,7 +233,7 @@ p.quote {
 
   h2 {
     font-family: 'JetBrains Mono', monospace;
-    color: #ea544d;
+    color: $primary-color;
     padding-bottom: 15px;
     font-weight: 700;
     font-size: 45px;
@@ -256,7 +254,7 @@ p.quote {
 
   h2 {
     font-family: 'JetBrains Mono', monospace;
-    color: #3b4045;
+    color: $secondary-color;
     padding-bottom: 15px;
     font-weight: 700;
     font-size: 45px;
