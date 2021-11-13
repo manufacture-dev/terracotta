@@ -18,9 +18,10 @@
         </div>
       </div>
     </div>
-    <div class="row align-items-start">
+    <div class="row">
       {{ range .facts }}
       <div class="col-md-3">
+        <!-- FIXME use margin instead of a new row -->
         <div class="row">
           <div class="col-md-10 offset-1">
             <div class="text-center">
@@ -28,8 +29,9 @@
             </div>
           </div>
         </div>
-        <!-- FIXME align center image -->
-        <img class="img-fluid m-5" src="{{ .image | absURL }}" alt="">
+        <div class="m-5">
+          <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+        </div>
       </div>
       {{ end }}
     </div>
