@@ -107,6 +107,36 @@ a {
   margin-top: 100px;
 }
 
+.border-hand-drawn {
+  border-top-left-radius: 255px 5px;
+  border-top-right-radius: 5px 225px;
+  border-bottom-right-radius: 225px 5px;
+  border-bottom-left-radius: 5px 255px;
+
+  box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+
+  border: solid 5px $secondary-color;
+
+  p {
+    margin: 0;
+  }
+}
+
+.numbered {
+  position: absolute;
+  top: -43px;
+  left: 40%;
+  width: 70px;
+  height: 45px;
+  line-height: 45px;
+  background: url(../images/numbered.png) no-repeat;
+
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
 .bg-1 {
   background-image: url(../images/call-to-action.jpg);
 }
