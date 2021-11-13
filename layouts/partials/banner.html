@@ -13,16 +13,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-5 offset-1 align-self-center text-center text-md-left">
+            <div class="col-md-6 offset-1 align-self-center text-center text-md-left">
                 <div class="block">
-                    <p class="font-size-30">{{ .description | markdownify }}</p>
-                    {{ if .button.enable }}
-                    {{ with .button }}
-                    <div class="cta">
-                        <a href="{{.link|absLangURL}}" class="btn btn-main">{{.label}}</a>
+                    <div class="row">
+                        <div class="col-md-11">
+                            <p class="font-size-30">{{ .description | markdownify }}</p>
+                            {{ if .button.enable }}
+                            {{ with .button }}
+                            <div class="cta">
+                                <a href="{{.link|absLangURL}}" class="btn btn-main">{{.label}}</a>
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
                     </div>
-                    {{ end }}
-                    {{ end }}
                 </div>
             </div>
             <div class="col-md-4">

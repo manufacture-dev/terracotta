@@ -5,17 +5,27 @@
 <section class="section bg-grey-2 bg" id="results" style="background-image: url(/images/bg-results.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: right bottom, bottom; background-size: 212px, 100% 125px">
   <div class="container">
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-9">
         <div class="heading">
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-left pt-5 pb-5">
+          <p>{{ .description | markdownify }} {{ .legend | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       {{ range .dimensions }}
       <div class="col-md-4">
         <div class="mb-40 text-center text-md-left">
           <div class="row">
+            <!-- FIXME one icon per dimension -->
             <div class="col-md-2">
-              <img class="img-fluid" width="35" src="/images/check.svg" alt="">
+              <i class="{{ .icon }}" style="font-size: 40px;"></i>
             </div>
             <div class="col-md-10">
               <h2 class="font-weight-bold mb-2">{{ .title | markdownify }}</h2>
@@ -25,6 +35,7 @@
             <div class="col-md-10 offset-2">
               {{ range .impacts }}
               <p>
+                <!-- FIXME reduce size of list items -->
                 <i class="d-inlin-block h2 mb-10"></i>
                 {{ .item | markdownify }}
               </p>

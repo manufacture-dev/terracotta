@@ -5,46 +5,60 @@
 <section class="section bg-grey-2 bg" id="approach" style="background-image: url(/images/bg-approach-left.png), url(/images/bg-approach-right.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: left bottom, right top, bottom; background-size: 246px, 243px, 100% 125px">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-9">
         <div class="heading">
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
+      <div class="col-md-11">
+        <div class="heading">
+          <h3>{{ .description | markdownify }}</h3>
+        </div>
+      </div>
     </div>
-    <div class="row align-items-end">
+    <div class="row align-items-end pb-5">
       {{ with .master }}
-      <div class="col-md-4 offset-3">
+      <div class="col-md-3 offset-1">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
-      <div class="col-md-2">
+      <div class="col-md-6 align-self-start">
         <div class="mb-40 text-md-left">
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          <!-- FIXME use class instead of style -->
+          <h4 class="font-weight-bold mb-2 pb-3" style="color: #fa464a; font-size: 30px">{{ .title | markdownify }}</h4>
           <p>{{ .description | markdownify }}</p>
         </div>
       </div>
       {{ end }}
     </div>
-    <div class="row align-items-center">
+    <div class="row align-items-start pt-5">
       {{ with .deliver }}
-      <div class="col-md-4">
-        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      <div class="col-md-1 offset-2">
+        <img class="img-fluid" src="/images/arrow.png" alt="">
       </div>
-      <div class="col-md-2 col-sm-2">
+      <div class="col-md-5">
         <div class="mb-40 text-md-left">
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          <h4 class="font-weight-bold mb-2 pb-3" style="font-size: 30px">{{ .title | markdownify }}</h4>
           <p>{{ .description | markdownify }}</p>
         </div>
+      </div>
+      <div class="col-md-3">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
       {{ end }}
+    </div>
+    <div class="row align-items-start pt-5">
       {{ with .impact }}
-      <div class="col-md-4">
-        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+      <div class="col-md-1 offset-2 align-self-start">
+        <img class="img-fluid" src="/images/arrow.png" alt="">
       </div>
-      <div class="col-md-2 col-sm-2">
+      <div class="col-md-5 align-self-start">
         <div class="mb-40 text-md-left">
-          <h4 class="font-weight-bold mb-2">{{ .title | markdownify }}</h4>
+          <h4 class="font-weight-bold mb-2 pb-3" style="font-size: 30px">{{ .title | markdownify }}</h4>
           <p>{{ .description | markdownify }}</p>
         </div>
+      </div>
+      <div class="col-md-3">
+        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
       {{ end }}
     </div>

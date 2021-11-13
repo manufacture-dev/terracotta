@@ -5,14 +5,19 @@
 <section class="section bg-grey-1 bg" id="target" style="background-image: url(/images/bg-action.png), linear-gradient(to bottom right, #f7f5f1 50%, #f2efe9 50%); background-position: right bottom, bottom; background-size: 243px, 100% 125px">
   <div class="container">
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-9">
         <div class="heading">
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
+      <div class="col-md-11">
+        <div class="heading">
+          <h3>{{ .description | markdownify }}</h3>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-10 offset-1">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
       <div class="col-12 text-center">
