@@ -1,8 +1,8 @@
 @import 'mixins';
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&family=Roboto:wght@300;700&display=swap');
 
 // Variables
-$primary-font: 'Josefin Sans',
+$primary-font: 'Roboto',
 sans-serif;
 $secondary-font: 'Droid Serif',
 serif;
@@ -81,9 +81,13 @@ h4,
   font-weight: 400;
 }
 
+b, strong {
+  font-weight: bold;
+}
+
 p {
   font-size: 25px;
-  line-height: 25px;
+  line-height: 35px;
 }
 
 ul {
@@ -228,16 +232,23 @@ p.quote {
 
 .heading {
   text-align: left;
-  color: #777777;
-  padding-bottom: 70px;
+  color: $secondary-color;
 
   h2 {
     font-family: 'JetBrains Mono', monospace;
     color: $primary-color;
     padding-bottom: 15px;
     font-weight: 700;
-    font-size: 45px;
-    line-height: 65px;
+    font-size: 40px;
+    line-height: 55px;
+  }
+
+  h3 {
+    padding-bottom: 15px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 55px;
+    padding-bottom: 70px;
   }
 
   p {
@@ -289,10 +300,11 @@ p.quote {
   color: #fff;
   border-radius: 30px;
   font-size: 18px;
+  font-weight: bold;
   padding: 15px 40px;
   display: inline-block;
   background-color: $primary-color;
-  box-shadow: 0 15px 40px rgba(237, 103, 99, 0.5);
+  box-shadow: none;
   background-image: linear-gradient(bottom, rgba(255, 239, 206, 0) 0%, rgba(255, 239, 206, 0.25) 100%);
 
   &:hover,
