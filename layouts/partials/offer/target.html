@@ -50,14 +50,16 @@
     </div>
     <div class="row">
       {{ range .levels }}
-      <div class="col-md-3 align-self-end">
+      <div class="col-md-3">
         <div class="text-center font-weight-bold">
           <p>{{ .name | markdownify }}</p>
         </div>
         <div class="text-left">
           <p>{{ .description | markdownify }}</p>
         </div>
-        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+        <div class="m-5">
+          <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+        </div>
       </div>
       {{ end }}
     </div>
