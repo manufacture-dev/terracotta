@@ -1,6 +1,6 @@
 {{- if .Params.results.enable }}
 {{- with .Params.results }}
-<section class="section bg-grey-1" id="results">
+<section class="section bg-grey-1 bg" id="results" style="background-image: url(/images/bg-testimonials-left.png); background-position: left bottom; background-size: 208px">
   <div class="container">
     <div class="row">
       <div class="col-md-10">
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-10 offset-1">
+      <div class="col-md-10 offset-1 pb-5">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
       {{ range .notes }}
