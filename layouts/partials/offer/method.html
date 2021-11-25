@@ -13,41 +13,84 @@
     <div class="row">
       <div class="col-md-11">
         <div class="text-left pb-5">
-          <p>{{ .description | markdownify }}</p>
+          <p>{{ .statement | markdownify }}</p>
         </div>
       </div>
     </div>
     <div class="row">
       {{ range .formats }}
-      <div class="col-md-6">
+      <div class="col-md-5 offset-1">
         <div class="row">
-          <div class="col-md-4 offset-3">
+          <div class="col-md-4 offset-2">
             <div class="text-left font-weight-bold">
-              <p>{{ .name | markdownify }}</p>
+              <p style="font-size: 30px">{{ .name | markdownify }}</p>
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3 align-self-center">
             <img class="img-fluid" src="{{ .image | absURL }}" alt="">
           </div>
         </div>
+        {{ range .practices }}
+        <div class="row">
+          <div class="col-md-1 text-right">
+            <i class="tf-ion-ios-minus-empty" style="font-size: 40px;"></i>
+          </div>
+          <div class="col-md-10">
+            <p class="font-weight-bold">{{ .name | markdownify }}</p>
+            <p>{{ .description }}</p>
+          </div>
+          </div>
+        {{ end }}
       </div>
       {{ end }}
     </div>
     {{ end }}
+    {{ with .methods }}
     <div class="row">
-      <div class="col-md-10 offset-1 align-self-end text-center">
-        <p>{{ .description | markdownify }}</p>
-        <img class="img-fluid" src="{{ .image | absURL }}" alt="">
-      </div>
-      {{ range .details }}
-      <div class="col-md-12 align-self-end text-left">
-        <p>{{ .element | markdownify }}</p>
-      </div>
-      {{ end }}
-      <div class="col-md-12 align-self-end text-left font-italic">
-        <p>{{ .note | markdownify }}</p>
+      <div class="col-md-11">
+        <div class="text-left pt-5 pb-5">
+          <p>{{ .statement | markdownify }}</p>
+        </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="text-left">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+        {{ range .items }}
+        <div class="row">
+          <div class="col-md-1 text-right">
+            <i class="tf-ion-ios-minus-empty" style="font-size: 40px;"></i>
+          </div>
+          <div class="col-md-10">
+            <p>{{ .label | markdownify }}</p>
+          </div>
+        </div>
+        {{ end }}
+        <div class="row pt-5 pb-5">
+          {{ range .cycles }}
+          <div class="col-md-5 offset-1">
+            <div class="text-center font-weight-bold">
+              <p style="font-size: 30px">{{ .name | markdownify }}</p>
+            </div>
+            <div class="text-left">
+              <p>{{ .description | markdownify }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        {{ range .details }}
+        <div class="text-left">
+          <p>{{ .element | markdownify }}</p>
+        </div>
+        {{ end }}
+        <div class="text-left font-italic">
+          <p>{{ .note | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>
 {{- end }}

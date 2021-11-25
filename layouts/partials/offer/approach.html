@@ -18,40 +18,48 @@
       </div>
     </div>
     <div class="row">
-      {{ $.Scratch.Set "index" 0 }}
-      {{ range .actions }}
-      <div class="col-md-6 pt-5">
+      <div class="col-md-10 offset-1">
         <div class="row">
-          <div class="col-10 offset-1">
-            <div class="text-left border-hand-drawn p-2">
-              {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
-              <div class="numbered">{{ $.Scratch.Get "index" }}</div>
-              <p>{{ .description | markdownify }}</p>
+        {{ $.Scratch.Set "index" 0 }}
+        {{ range .actions }}
+        <div class="col-md-6 pt-5">
+          <div class="row">
+            <div class="col-10 offset-1">
+              <div class="text-left border-hand-drawn p-2">
+                {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+                <div class="numbered">{{ $.Scratch.Get "index" }}</div>
+                <p>{{ .description | markdownify }}</p>
+              </div>
             </div>
           </div>
         </div>
+        {{ end }}
+        </div>
       </div>
-      {{ end }}
     </div>
     {{ end }}
     {{ range .outcomes }}
     <div class="row">
-      <div class="col-md-11 pt-5 pb-3">
-        <div class="text-left">
-          <p>{{ .description | markdownify }}</p>
-        </div>
-      </div>
-      <div class="col-md-11">
-        {{ range .items }}
+      <div class="col-md-10 offset-1">
         <div class="row">
-          <div class="col-md-1 text-right">
-            <i class="tf-ion-ios-minus-empty" style="font-size: 40px;"></i>
+          <div class="col-md-11 pt-5 pb-3">
+            <div class="text-left">
+              <p>{{ .description | markdownify }}</p>
+            </div>
           </div>
-          <div class="col-md-10">
-            <p>{{ .name | markdownify }}</p>
+          <div class="col-md-11">
+            {{ range .items }}
+            <div class="row">
+              <div class="col-md-1 text-right">
+                <i class="tf-ion-ios-minus-empty" style="font-size: 40px;"></i>
+              </div>
+              <div class="col-md-10">
+                <p>{{ .name | markdownify }}</p>
+              </div>
+            </div>
+            {{ end }}
           </div>
         </div>
-        {{ end }}
       </div>
     </div>
     {{ end }}

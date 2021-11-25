@@ -9,15 +9,82 @@
         </div>
       </div>
     </div>
+    {{ with .statement }}
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 pb-5">
+      <div class="col-md-11">
+        <div class="text-left">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8 col-md-8 offset-md-1 pb-5">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
-      {{ range .notes }}
-      <div class="col-md-12 align-self-end text-left font-italic">
+      <div class="col-4 col-md-2 pb-5 text-left align-self-center">
+        {{ range .comments }}
         <p>{{ .label | markdownify }}</p>
+        {{ end }}
       </div>
-      {{ end }}
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-1 text-left font-italic">
+        <p>{{ .note | markdownify }}</p>
+      </div>
+    </div>
+    {{ end }}
+    {{ with .delivery }}
+    <div class="row">
+      <div class="col-md-11">
+        <div class="text-left pt-5 pb-5">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="row">
+          {{ $.Scratch.Set "index" 0 }}
+          {{ range .items }}
+          <div class="col-md-4 pt-5">
+            <div class="row">
+              <div class="col-10 offset-1">
+                <div class="text-left border-hand-drawn p-2">
+                  {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+                  <div class="numbered">{{ $.Scratch.Get "index" }}</div>
+                  <p>{{ .name | markdownify }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    {{ with .passion }}
+    <div class="row">
+      <div class="col-md-11">
+        <div class="text-left pt-5 pb-5">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="row">
+          {{ range .items }}
+          <div class="col-md-4">
+            <div class="text-center">
+              <p>{{ .name | markdownify }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    <div class="row">
       <div class="col-12 text-center">
         {{ if .button.enable }}
         {{ with .button }}
