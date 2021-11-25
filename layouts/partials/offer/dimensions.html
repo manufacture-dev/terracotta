@@ -1,0 +1,30 @@
+{{- if .Params.dimensions.enable }}
+{{- with .Params.dimensions }}
+<section class="section bg-grey-2 bg" id="dimensions" style="background-image: url(/images/bg-section-2-left-top.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: left top, bottom; background-size: 213px, 100% 125px">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-11">
+        <div class="text-left pb-5">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {{ range .levels }}
+      <div class="col-md-3">
+        <div class="text-center font-weight-bold">
+          <p>{{ .name | markdownify }}</p>
+        </div>
+        <div class="text-left">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+        <div class="m-5">
+          <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

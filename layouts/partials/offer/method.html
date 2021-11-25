@@ -1,55 +1,7 @@
 {{- if .Params.method.enable }}
 {{- with .Params.method }}
-<section class="section bg-grey-1 bg" id="method" style="background-image: url(/images/bg-section-3-right-bottom.png), linear-gradient(to bottom right, #f7f5f1 50%, #f2efe9 50%); background-position: right bottom, bottom; background-size: 243px, 100% 125px">
+<section class="section bg-grey-1 bg" id="method" style="background-image: url(/images/bg-section-5-left-top.png), linear-gradient(to bottom right, #f7f5f1 50%, #f2efe9 50%); background-position: left top, bottom; background-size: 222px, 100% 125px">
   <div class="container">
-    <div class="row">
-      <div class="col-md-10">
-        <div class="heading">
-          <h2>{{ .title | markdownify }}</h2>
-        </div>
-      </div>
-    </div>
-    {{ with .coaching }}
-    <div class="row">
-      <div class="col-md-11">
-        <div class="text-left pb-5">
-          <p>{{ .statement | markdownify }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      {{ range .formats }}
-      <div class="col-md-5 offset-1">
-        <div class="row">
-          <div class="col-md-4 offset-2">
-            <div class="text-left font-weight-bold">
-              <p style="font-size: 30px">{{ .name | markdownify }}</p>
-            </div>
-          </div>
-          <div class="col-md-3 align-self-center">
-            <img class="img-fluid" src="{{ .image | absURL }}" alt="">
-          </div>
-        </div>
-        {{ range .practices }}
-        <div class="row">
-          <div class="col-md-1 text-right">
-            <i class="tf-ion-ios-minus-empty" style="font-size: 40px;"></i>
-          </div>
-          <div class="col-md-10">
-            <p class="font-weight-bold">{{ .name | markdownify }}</p>
-            <p>{{ .description }}</p>
-          </div>
-          </div>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
-    {{ end }}
-  </div>
-</section>
-<section class="section bg-grey-2 bg" id="methods" style="background-image: url(/images/bg-section-4-left-bottom.png), url(/images/bg-section-4-right-top.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: left bottom, right top, bottom; background-size: 246px, 243px, 100% 125px">
-  <div class="container">
-    {{ with .methods }}
     <div class="row">
       <div class="col-md-11">
         <div class="text-left pt-5 pb-5">
@@ -94,7 +46,6 @@
         </div>
       </div>
     </div>
-    {{ end }}
   </div>
 </section>
 {{- end }}
