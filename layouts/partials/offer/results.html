@@ -18,13 +18,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-8 col-md-8 offset-md-1 pb-5">
+      <div class="col-12 col-md-10 offset-md-1 pb-5">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
-      </div>
-      <div class="col-4 col-md-2 pb-5 text-left align-self-center">
-        {{ range .comments }}
-        <p>{{ .label | markdownify }}</p>
-        {{ end }}
       </div>
     </div>
     <div class="row">
