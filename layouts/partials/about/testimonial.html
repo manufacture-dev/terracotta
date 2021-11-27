@@ -1,0 +1,15 @@
+{{- if .Params.testimonial.enable }}
+{{- with .Params.testimonial }}
+<section class="section bg-grey-2 bg" id="testimonial" style="background-image: url(/images/bg-section-4-left-bottom.png), url(/images/bg-section-4-right-top.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: left bottom, right top, bottom; background-size: 245px, 243px, 100% 125px">
+  <div class="container">
+    <div class="row pb-5">
+      <div class="col-12 col-md-8 offset-md-2">
+        <div class="text-left">
+          <h2>{{ .content | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

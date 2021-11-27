@@ -1,0 +1,57 @@
+{{- if .Params.inspiration.enable }}
+{{- with .Params.inspiration }}
+<section class="section bg-grey-2 bg" id="inspiration" style="background-image: url(/images/bg-section-2-left-top.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: left top, bottom; background-size: 213px, 100% 125px">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="heading">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-11">
+        <div class="text-left pb-3">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-11">
+        {{ range .details }}
+        <div class="row">
+          <div class="col-md-1 text-right">
+            <i class="tf-ion-ios-minus-empty" style="font-size: 40px;"></i>
+          </div>
+          <div class="col-md-10">
+            <p>{{ .item | markdownify }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ with .comparison }}
+    <div class="row pt-5">
+      <div class="col-md-11">
+        <div class="text-left pb-3">
+          <p>{{ .label | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {{ range .others }}
+      <div class="col-md-5 offset-md-1">
+        <div class="m-5">
+          <img class="img-fluid" src="{{ .image | absURL }}" alt="">
+        </div>
+        <div class="text-left">
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{- end }}
+{{- end }}

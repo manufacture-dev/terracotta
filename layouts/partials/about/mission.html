@@ -1,0 +1,53 @@
+{{- if .Params.mission.enable }}
+{{- with .Params.mission }}
+<section class="section linked bg-grey-2 bg" id="mission" style="background-image: url(/images/bg-section-6-right-bottom.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: right bottom, bottom; background-size: 212px, 100% 125px">
+  <div class="container">
+    <div class="row p-5">
+      <div class="col-md-11">
+        <div class="text-left font-weight-bold">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+    {{ range .description }}
+    <div class="row">
+      <div class="col-md-11">
+        <div class="text-left pb-3">
+          <p>{{ .item | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    {{ with .ambition }}
+    <div class="row p-5">
+      <div class="col-md-11">
+        <div class="text-left font-weight-bold">
+          <h2>{{ .title | markdownify }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row p-5">
+          {{ $.Scratch.Set "index" 0 }}
+          {{ range .steps }}
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-10 offset-1">
+                <div class="text-left border-hand-drawn p-2">
+                  {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+                  <div class="numbered">{{ $.Scratch.Get "index" }}</div>
+                  <p>{{ .description | markdownify }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{- end }}
+{{- end }}
