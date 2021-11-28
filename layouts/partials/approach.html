@@ -16,12 +16,12 @@
         </div>
       </div>
     </div>
-    <div class="row align-items-end pb-5">
+    <div class="row align-items-end pb-md-5">
       {{ with .master }}
-      <div class="col-md-3 offset-1">
+      <div class="col-md-3 offset-md-1">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
-      <div class="col-md-6 align-self-start">
+      <div class="col-md-6 align-self-start pt-5">
         <div class="mb-40 text-md-left">
           <!-- FIXME use class instead of style -->
           <h4 class="font-weight-bold mb-2 pb-3 primary-color" style="font-size: 30px">{{ .title | markdownify }}</h4>
@@ -32,10 +32,10 @@
     </div>
     <div class="row align-items-start pt-5">
       {{ with .deliver }}
-      <div class="col-md-1 offset-2">
+      <div class="col-4 col-md-1 offset-md-2">
         <img class="img-fluid" src="/images/arrow.png" alt="">
       </div>
-      <div class="col-md-5">
+      <div class="col-8 col-md-5 align-self-start pt-5 pt-md-3">
         <div class="mb-40 text-md-left">
           <!-- FIXME use class instead of style -->
           <h4 class="font-weight-bold mb-2 pb-3" style="font-size: 30px">{{ .title | markdownify }}</h4>
@@ -49,10 +49,10 @@
     </div>
     <div class="row align-items-start pt-5">
       {{ with .impact }}
-      <div class="col-md-1 offset-2 align-self-start">
+      <div class="col-4 col-md-1 offset-md-2">
         <img class="img-fluid" src="/images/arrow.png" alt="">
       </div>
-      <div class="col-md-5 align-self-start">
+      <div class="col-8 col-md-5 align-self-start pt-5 pt-md-3">
         <div class="mb-40 text-md-left">
           <h4 class="font-weight-bold mb-2 pb-3" style="font-size: 30px">{{ .title | markdownify }}</h4>
           <p>{{ .description | markdownify }}</p>
