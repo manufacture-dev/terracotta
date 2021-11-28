@@ -6,21 +6,21 @@
 <section class="section bg-grey-1 bg" style="background-image: url(/images/bg-section-1-left-bottom.png), url(/images/bg-section-1-right-top.png), linear-gradient(to bottom right, #f7f5f1 50%, #f2efe9 50%); background-position: left bottom, right top, bottom; background-size: 245px, 364px, 100% 250px">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 offset-1">
+            <div class="col-md-10 offset-md-1">
                 <div class="block">
                     <h1 class="font-weight-bold font-title">{{ .title | markdownify }}</h1>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 offset-1 align-self-center text-center text-md-left">
+            <div class="col-md-6 offset-md-1 align-self-center text-left pb-5">
                 <div class="block">
                     <div class="row">
                         <div class="col-md-11">
                             <p class="font-size-30">{{ .description | markdownify }}</p>
                             {{ if .button.enable }}
                             {{ with .button }}
-                            <div class="cta">
+                            <div class="cta text-center text-md-left">
                                 <a href="{{.link|absLangURL}}" class="btn btn-main">{{.label}}</a>
                             </div>
                             {{ end }}
