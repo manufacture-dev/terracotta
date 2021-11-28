@@ -30,11 +30,11 @@
         </div>
       </div>
       <div class="col-md-4 align-self-end">
-        <div class="block pb-3">
+        <div class="block pt-5 pb-3">
           <a href="{{ site.BaseURL | relLangURL }}" class="mb-4 d-inline-block">{{ if site.Params.logo }} <img style="filter: invert(100%);" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" {{with site.Params.logo_width}}width="{{.}}"{{end}}> {{ else }} {{ .Title }} {{ end }}</a>
         </div>
       </div>
-      <div class="col-md-2 offset-2 align-self-start">
+      <div class="col-md-2 offset-md-2 align-self-start">
         {{- if $data.footer.social.enable }}
         {{- with $data.footer.social }}
         <ul class="footer-social">
