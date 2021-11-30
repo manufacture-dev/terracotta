@@ -21,7 +21,7 @@
                             {{ if .button.enable }}
                             {{ with .button }}
                             <div class="cta text-center text-md-left">
-                                <a href="{{.link|absLangURL}}" class="btn btn-main">{{.label}}</a>
+                                <a href="{{ .link | absLangURL }}" class="btn btn-main">{{.label}}</a>
                             </div>
                             {{ end }}
                             {{ end }}
