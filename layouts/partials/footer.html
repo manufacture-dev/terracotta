@@ -37,9 +37,11 @@
       <div class="col-md-2 offset-md-2 align-self-start">
         {{- if $data.footer.social.enable }}
         {{- with $data.footer.social }}
-        <ul class="footer-social">
+        <ul class="row footer-social justify-content-center">
           {{ range .networks }}
-          <a href="{{ .url | absLangURL }}"><li class="{{ .icon }}"></li></a>
+          <div class="col-3 col-md-12">
+            <a href="{{ .url | absLangURL }}"><li class="{{ .icon }}"></li></a>
+          </div>
           {{ end }}
         </ul>
         {{- end }}
