@@ -1,0 +1,29 @@
+{{- if .Params.become_a_coach.enable }}
+{{- with .Params.become_a_coach }}
+<section class="section linked bg-grey-2 bg" id="become_a_coach" style="background-image: url(/images/bg-section-2-left-top.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: left top, bottom; background-size: 213px, 100% 125px">
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-md-11">
+                <div class="text-left">
+                    <h2>{{ .label | markdownify }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-md-11">
+                {{ range .details }}
+                <div class="row">
+                    <div class="col-md-1 text-right">
+                        <i class="tf-ion-ios-minus-empty" style="font-size: 40px;"></i>
+                    </div>
+                    <div class="col-md-10">
+                        <p>{{ .item | markdownify }}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{- end }}
+{{- end }}

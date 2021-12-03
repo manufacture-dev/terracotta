@@ -1,0 +1,42 @@
+{{- if .Params.we_are_hiring.enable }}
+{{- with .Params.we_are_hiring }}
+<section class="section linked bg-grey-1 bg" id="we_are_hiring" style="background-image: linear-gradient(to bottom right, #f7f5f1 50%, #f2efe9 50%); background-position: bottom; background-size: 100% 125px">
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-md-11">
+                <div class="text-left">
+                    <h2>{{ .label | markdownify }}</h2>
+                </div>
+            </div>
+        </div>
+        {{ range .content }}
+        <div class="row">
+            <div class="col-md-10">
+                <div class="text-left pb-3">
+                    <p>{{ .item | markdownify }}</p>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        <div class="row">
+            <div class="col-md-10">
+                <div class="text-left pt-3">
+                    <p>{{ .proposal | markdownify }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-left">
+                {{ if .button.enable }}
+                {{ with .button }}
+                <div class="cta pb-5">
+                    <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{- end }}
+{{- end }}

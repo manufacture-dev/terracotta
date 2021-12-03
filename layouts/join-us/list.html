@@ -1,31 +1,13 @@
 {{ define "main" }}
 
-<section class="section bg-grey-1 bg" style="background-image: url(/images/bg-section-7-left-bottom.png), url(/images/bg-section-1-right-top.png); background-position: left bottom, right top; background-size: 207px, 364px">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-left mb-5">
-        <h1 class="font-weight-bold">{{ .Title }}</h1>
-      </div>
-      <div class="col-lg-10 mb-5">
-        <div class="content">
-          {{ .Content }}
-        </div>
-      </div>
-      {{ if .Params.button.enable }}
-      {{ with .Params.button }}
-      <div class="col-lg-10 text-center mb-5">
-        <a href="{{ .link | absLangURL }}" class="btn btn-main">{{ .label }}</a>
-      </div>
-      {{ end }}
-      {{ end }}
-      <div class="col-lg-10 text-left mb-5">
-        <h2 class="mb-2">{{ .Params.principles.label | markdownify }}</h2>
-        {{ range .Params.principles.items }}
-        <p>- {{ . | markdownify }}</p>
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
+  {{- partial "join-us/why.html" . }}
+
+  {{- partial "join-us/become-a-coach.html" . }}
+
+  {{- partial "join-us/we-are-hiring.html" . }}
+
+  {{- partial "join-us/characteristics.html" . }}
+
+  {{- partial "join-us/form.html" . }}
 
 {{ end }}
