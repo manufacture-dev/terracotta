@@ -4,8 +4,14 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-8 offset-md-2">
-        <div class="heading-black text-left">
-          <h2>{{ .content | markdownify }}</h2>
+        <div class="text-left">
+          <table style="min-height:30vh !important">
+            <tbody>
+            <tr>
+              <td class="align-middle"><h2>{{ .content | markdownify }}</h2></td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
