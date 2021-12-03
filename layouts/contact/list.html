@@ -2,10 +2,10 @@
 
 <section class="section bg-grey-1 bg" style="background-image: url(/images/bg-section-7-left-bottom.png), url(/images/bg-section-1-right-top.png); background-position: left bottom, right top; background-size: 207px, 364px">
   <div class="container">
+    {{ with .Params }}
     <div class="row">
-      {{ with .Params }}
       <div class="col-lg-12 mb-5">
-        <h1 class="font-weight-bold">{{ .Title }}</h1>
+        <h1 class="font-weight-bold">{{ .label | markdownify }}</h1>
       </div>
       <div class="col-lg-8 mb-5">
         <p>{{ .content | markdownify }}</p>
@@ -38,19 +38,21 @@
           <div class="col-12 text-center pt-3 align-self-center">
             <input type="text" name="honeypot" style="display: none;">
             <input type="hidden" name="accessKey" value="{{ site.Params.staticforms_access_key }}">
-            <input type="hidden" name="redirectTo" value="{{ .link | absLangURL }}?sent=yes">
+            <input type="hidden" name="redirectTo" value="{{ .redirect_to | absLangURL }}?sent=yes">
             <button type="submit" value="send" class="btn btn-main">{{ i18n "send" }}</button>
           </div>
           <div id="sent" class="col-12 pt-3 text-center" style="display: none;">
-            <p>{{ .sent | markdownify }}</p>
+            {{ range .sent_messages }}
+            <p>{{ .item | markdownify }}</p>
+            {{ end }}
           </div>
         </form>
       </div>
       <div class="col-lg-4 pt-5 align-self-center">
         <img class="img-fluid" src="{{ .image | absURL }}" alt="">
       </div>
-      {{ end }}
     </div>
+    {{ end }}
   </div>
 </section>
 

@@ -2,10 +2,17 @@
 
 <section class="section bg-grey-1 bg" style="background-image: url(/images/bg-section-7-left-bottom.png), url(/images/bg-section-1-right-top.png); background-position: left bottom, right top; background-size: 207px, 364px">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-left mb-5">
-        <h1 class="font-weight-bold">{{ .Title }}</h1>
+    <div class="row">
+      {{ with .Params }}
+      <div class="col-lg-9 mb-5">
+        <h1 class="font-weight-bold">{{ .label | markdownify }}</h1>
       </div>
+      <div class="col-lg-8 mb-5">
+        <p>{{ .introduction | markdownify }}</p>
+      </div>
+      {{ end }}
+    </div>
+    <div class="row justify-content-center">
       <div class="col-lg-10 mb-5">
         <div class="content">
           {{ .Content }}
