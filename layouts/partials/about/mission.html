@@ -2,9 +2,9 @@
 {{- with .Params.mission }}
 <section class="section linked bg-grey-2 bg" id="mission" style="background-image: url(/images/bg-section-6-right-bottom.png), linear-gradient(to top right, #f7f5f1 50%, #f2efe9 50%); background-position: right bottom, bottom; background-size: 212px, 100% 125px">
   <div class="container">
-    <div class="row p-5">
+    <div class="row pt-5 pb-5">
       <div class="col-md-11">
-        <div class="text-left font-weight-bold">
+        <div class="text-left">
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
@@ -19,9 +19,9 @@
     </div>
     {{ end }}
     {{ with .ambition }}
-    <div class="row p-5">
+    <div class="row pt-5 pb-5">
       <div class="col-md-11">
-        <div class="text-left font-weight-bold">
+        <div class="text-left">
           <h2>{{ .title | markdownify }}</h2>
         </div>
       </div>
