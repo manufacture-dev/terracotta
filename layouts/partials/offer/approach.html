@@ -17,13 +17,13 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-10 offset-1">
+    <div class="row pb-5">
+      <div class="col-md-12">
         <div class="row">
         {{ $.Scratch.Set "index" 0 }}
         {{ range .actions }}
         <div class="col-md-6 pt-5">
-          <div class="row">
+          <div class="row pt-5">
             <div class="col-10 offset-1">
               <div class="text-left border-hand-drawn p-2">
                 {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}

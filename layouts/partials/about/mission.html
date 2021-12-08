@@ -19,7 +19,7 @@
     </div>
     {{ end }}
     {{ with .ambition }}
-    <div class="row pt-5 pb-5">
+    <div class="row pt-5">
       <div class="col-md-11">
         <div class="text-left">
           <h2>{{ .title | markdownify }}</h2>
@@ -32,7 +32,7 @@
           {{ $.Scratch.Set "index" 0 }}
           {{ range .steps }}
           <div class="col-md-4 pt-5">
-            <div class="row">
+            <div class="row pt-5">
               <div class="col-10 offset-1">
                 <div class="text-left border-hand-drawn p-2">
                   {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
