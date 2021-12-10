@@ -39,13 +39,20 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-10 offset-1">
+    <div class="row pb-5">
+      <div class="col-md-12">
         <div class="row">
+          {{ $.Scratch.Set "index" 3 }}
           {{ range .items }}
-          <div class="col-md-4">
-            <div class="text-left text-md-center">
-              <p>{{ .name | markdownify }}</p>
+          <div class="col-md-4 pt-5">
+            <div class="row pt-5">
+              <div class="col-10 offset-1">
+                <div class="text-left border-hand-drawn p-2">
+                  {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+                  <div class="numbered">{{ $.Scratch.Get "index" }}</div>
+                  <p>{{ .name | markdownify }}</p>
+                </div>
+              </div>
             </div>
           </div>
           {{ end }}
