@@ -387,6 +387,11 @@ p.quote {
   padding: 10px 20px !important;
 }
 
+.nav-active {
+  color: $primary-color !important;
+  text-decoration: underline;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: #444;
 }
