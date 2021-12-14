@@ -10,9 +10,10 @@
 
       <div class="collapse navbar-collapse text-center" id="navigation">
         <ul class="navbar-nav ml-auto">
+          {{ $currentPage := . }}
           {{ range site.Menus.main }}
           <li class="nav-item">
-            <a class="nav-link" href="{{if .Pre}}{{site.BaseURL | relLangURL}}{{.Pre}}{{ .URL }}{{else}}{{.URL | absLangURL}}{{end}}">{{ i18n .Name }}</a>
+            <a class="nav-link {{ if $currentPage.HasMenuCurrent "main" . }}nav-active{{ end }}" href="{{if .Pre}}{{site.BaseURL | relLangURL}}{{.Pre}}{{ .URL }}{{else}}{{.URL | absLangURL}}{{end}}">{{ i18n .Name }}</a>
           </li>
           {{ end }}
         </ul>
